@@ -1,0 +1,39 @@
+﻿@using Entities.Concrete
+@model List<Product>
+
+@{
+    Layout = null;
+}
+<!doctype html>
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <div class="container">
+        <div class="p-5 w-50 m-0">
+            <a href="/Product/Add" class="btn btn-success">Add Product</a>
+            <a href="/Product/Delete" class="btn btn-danger">Delete Product</a>
+
+        </div>
+        <br />
+        <table class="table table-bordered">
+            <tr>
+                <th>Id</th>
+                <th>Category Id</th>
+                <th>Ürün Adı</th>
+                <th>Birim Fiyatı</th>
+                <th>Stok Miktarı</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td>@item.ProductID</td>
+            <td>@item.CategoryId</td>
+            <td>@item.ProductName</td>
+            <td>@item.UnitPrice</td>
+            <td>@item.UnitsInStock</td>
+
+        </tr>
+            }
+        </table>
+    </div>
+   <br />
+</html>
